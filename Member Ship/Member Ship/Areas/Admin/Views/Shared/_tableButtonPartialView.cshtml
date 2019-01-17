@@ -1,0 +1,50 @@
+﻿@model Member_Ship.Areas.Admin.Models.SmallButtonModel
+@using Member_Ship.Areas.Admin.Models
+
+
+
+<td style="width:120px">
+    <div class="btn-group" role="group">
+
+    @Html.Partial("_smallButtonParital", new SmallButtonModel
+{
+   Action="Details",
+   ButtonType="btn-primary",
+   Glyph="pencil",
+   Text="Edit Button",
+   Id=Model.Id,
+   ItemId=Model.ItemId,
+   ProductId=Model.ProductId,
+   SubscriptionId=Model.SubscriptionId
+
+})
+    @Html.Partial("_smallButtonParital", new SmallButtonModel
+{
+   Action="Details",
+   ButtonType="btn-success",
+   Glyph="list",
+   Text="Edit Button",
+   Id=Model.Id,
+   ItemId=Model.ItemId,
+   ProductId=Model.ProductId,
+   SubscriptionId=Model.SubscriptionId
+
+})
+    @Html.Partial("_smallButtonParital", new SmallButtonModel
+{
+Action="Delete",
+ButtonType="btn-danger",
+Glyph="trash",
+Text="Delete Button",
+Id=Model.Id,
+ItemId=Model.ItemId,
+ProductId=Model.ProductId,
+SubscriptionId=Model.SubscriptionId
+
+})
+
+
+
+
+</div>
+</td>

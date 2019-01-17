@@ -1,0 +1,27 @@
+﻿@model Member_Ship.Entities.Section
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Section</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tilte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tilte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.Partial("_EditButtonPartial", Model.Id)
+    @Html.Partial("_backToListButtonPartial")
+
+</p>
