@@ -15,7 +15,7 @@ namespace Member_Ship.Entities
 
         [MaxLength(255)]
         [Required ]
-        public string Tilte { get; set; }
+        public string Title { get; set; }
 
 
 

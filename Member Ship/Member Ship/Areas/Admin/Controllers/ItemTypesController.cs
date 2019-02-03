@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -12,107 +12,107 @@ using Member_Ship.Models;
 
 namespace Member_Ship.Areas.Admin.Controllers
 {
-    public class SectionController : Controller
+    public class ItemTypesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Admin/Section
+        // GET: Admin/ItemTypes
         public async Task<ActionResult> Index()
         {
-            return View(await db.Sections.ToListAsync());
+            return View(await db.itemTypes.ToListAsync());
         }
 
-        // GET: Admin/Section/Details/5
+        // GET: Admin/ItemTypes/Details/5
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = await db.Sections.FindAsync(id);
-            if (section == null)
+            ItemType itemType = await db.itemTypes.FindAsync(id);
+            if (itemType == null)
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(itemType);
         }
 
-        // GET: Admin/Section/Create
+        // GET: Admin/ItemTypes/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Admin/Section/Create
+        // POST: Admin/ItemTypes/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Title")] Section section)
+        public async Task<ActionResult> Create([Bind(Include = "Id,Title")] ItemType itemType)
         {
             if (ModelState.IsValid)
             {
-                db.Sections.Add(section);
+                db.itemTypes.Add(itemType);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(section);
+            return View(itemType);
         }
 
-        // GET: Admin/Section/Edit/5
+        // GET: Admin/ItemTypes/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = await db.Sections.FindAsync(id);
-            if (section == null)
+            ItemType itemType = await db.itemTypes.FindAsync(id);
+            if (itemType == null)
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(itemType);
         }
 
-        // POST: Admin/Section/Edit/5
+        // POST: Admin/ItemTypes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Title")] Section section)
+        public async Task<ActionResult> Edit([Bind(Include = "Id,Title")] ItemType itemType)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(section).State = EntityState.Modified;
+                db.Entry(itemType).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            return View(section);
+            return View(itemType);
         }
 
-        // GET: Admin/Section/Delete/5
+        // GET: Admin/ItemTypes/Delete/5
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Section section = await db.Sections.FindAsync(id);
-            if (section == null)
+            ItemType itemType = await db.itemTypes.FindAsync(id);
+            if (itemType == null)
             {
                 return HttpNotFound();
             }
-            return View(section);
+            return View(itemType);
         }
 
-        // POST: Admin/Section/Delete/5
+        // POST: Admin/ItemTypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Section section = await db.Sections.FindAsync(id);
-            db.Sections.Remove(section);
+            ItemType itemType = await db.itemTypes.FindAsync(id);
+            db.itemTypes.Remove(itemType);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

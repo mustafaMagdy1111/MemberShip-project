@@ -25,6 +25,8 @@ namespace Member_Ship.Entities
         [MaxLength(1024)]
         public string Url { get; set; }
 
+        [DisplayName("Image Url")]
+
         [MaxLength(1024)]
         public string ImageUrl { get; set; }
 
@@ -32,6 +34,8 @@ namespace Member_Ship.Entities
         public string Html { get; set; }
 
         [DefaultValue(0)]
+        [DisplayName("Wait Days")]
+
         public int WaitDays { get; set; }
 
         public string HtmlShort
@@ -44,7 +48,7 @@ namespace Member_Ship.Entities
         public int ItemTypetId { get; set; }
         public int SectiontId { get; set; }
         public int PartId { get; set; }
-        public int IsFree { get; set; }
+        public bool  IsFree { get; set; }
 
         [DisplayName("Item Type")]
         public ICollection<ItemType> itemTypes { get; set; }

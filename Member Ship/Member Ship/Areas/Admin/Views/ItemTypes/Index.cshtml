@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Member_Ship.Entities.Section>
+﻿@model IEnumerable<Member_Ship.Entities.ItemType>
+
 @using Member_Ship.Areas.Admin.Models
 @{
     ViewBag.Title = "Index";
@@ -22,9 +23,9 @@
         <td>
             @Html.DisplayFor(modelItem => item.Title)
         </td>
-
-        @Html.Partial("_tableButtonPartialView", new SmallButtonModel { Id = item.Id })
-
+  
+            @Html.Partial("_tableButtonPartialView", new SmallButtonModel { Id = item.Id })
+      
     </tr>
 }
 
